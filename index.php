@@ -3,7 +3,7 @@ print ("1st");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// require 'vendor/autoload.php';
+ require 'vendor/autoload.php';
 print ("2nd");
 $mail = new PHPMailer(true);
 print ("3rd");
