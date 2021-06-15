@@ -1,15 +1,34 @@
-<pre>
 <?php
- print ("Checking for libraries1st pass.");
-  
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-  print ("Checking for libraries 2nd pass.");
-require 'vendor/autoload.php';
 
-        print ("Checking for libraries.");
-        print `date`;
-        print `cal`;
-        print ("Task 6 is completed");
+// require 'vendor/autoload.php';
+
+$mail = new PHPMailer(true);
+
+try {
+	$mail->SMTPDebug = true;									
+	$mail->isSMTP();											
+	$mail->Host	 = 'smtp.gmail.com;';					
+	$mail->SMTPAuth = true;							
+	$mail->Username = 'doniksingh@gmail.com';				
+	$mail->Password = 'PaSS@1234';						
+	$mail->SMTPSecure = 'ssl';							
+	$mail->Port	 = 465;
+
+	$mail->setFrom('baap@tera.com', 'Name');		
+	$mail->addAddress('1829099@kiit.ac.in');
+	// $mail->addAddress('receiver2@gfg.com', 'Name');
+	
+	$mail->isHTML(true);								
+	$mail->Subject = 'Mail aaya kya?';
+	$mail->Body = 'Bta de bhai <b>aaya</b> ';
+	$mail->AltBody = 'baap se bkchodi nhi';
+	$mail->send();
+	echo "Mail has been sent successfully!";
+} catch (Exception $e) {
+	echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 ?>
-</pre>
