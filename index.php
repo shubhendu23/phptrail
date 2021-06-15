@@ -4,9 +4,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 print ("2nd");
-include 'Exception.php';
-include 'PHPMailer.php';
-include 'SMTP.php';
+required 'Exception.php';
+required 'PHPMailer.php';
+required 'SMTP.php';
 print ("3rd");
 $mail = new PHPMailer(true);
 print ("4th");
