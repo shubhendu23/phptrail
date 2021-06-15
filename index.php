@@ -3,10 +3,14 @@ print ("1st");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
- require 'vendor/autoload.php';
 print ("2nd");
-$mail = new PHPMailer(true);
+require 'Exception.php';
+require 'PHPMailer.php';
+require 'SMTP.php';
 print ("3rd");
+$mail = new PHPMailer(true);
+print ("4th");
+
 try {
 	$mail->SMTPDebug = true;									
 	$mail->isSMTP();											
